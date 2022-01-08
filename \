@@ -1,0 +1,26 @@
+/*
+* This is a program is the main 
+*
+* @author  Ahmad El-khawaldeh
+* @version 1.0
+* @since   2021-12-03
+*/
+
+
+public static void main(String[] args) {
+    Scanner in = new Scanner(System.in); // scanner class
+    // input side of the triangle a,b,c
+    System.out.println("Side A:");
+    int a = in.nextInt();
+    System.out.println("Side B:");
+    int b = in.nextInt();
+    System.out.println("Side B:");
+    int c = in.nextInt();
+    // pass the vlaue to the triangle
+    Triangle t = new Triangle(a, b, c);
+    // displayt he triangle information
+    System.out.println("The area is: " + t.GetArea());
+    System.out.println("The name is: " + t.GetName());
+    System.out.println("The perimeter is: " + t.GetPerimeter());
+    System.out.println("The Triangle is: " + t.IsTriangleValid());
+}
