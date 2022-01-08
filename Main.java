@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
 * This program uses a custom class.
 */
-public class Main {
+final class Main {
     /**
     * Prevent instantiation
     * Throw an exception IllegalStateException.
@@ -32,7 +32,7 @@ public class Main {
     *
     * @param args this will not be used
     */
-    public static void main(String[] args) {
+    public static void main(String[] final args) {
         try {
             Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
@@ -44,19 +44,19 @@ public class Main {
             System.out.println("\nSide C:");
             double sideC = input.nextDouble();
 
-            Triangle T = new Triangle(sideA, sideB, sideC);
+            Triangle tr = new Triangle(sideA, sideB, sideC);
             // calling GetArea()
-            System.out.println("The area is: " + T.getArea());
+            System.out.println("The area is: " + tr.getArea());
             // calling GetAngleA()
-            System.out.println("Angle A is: " + T.getAngleA());
+            System.out.println("Angle A is: " + tr.getAngleA());
             // calling GetAngleB()
-            System.out.println("Angle B is: " +  T.getAngleB());
+            System.out.println("Angle B is: " +  tr.getAngleB());
             // calling GetAngleC()
-            System.out.println("Angle C is: " + T.getAngleC());
+            System.out.println("Angle C is: " + tr.getAngleC());
             // calling GetName()
-            System.out.println("The name is: " + T.getName());
+            System.out.println("The name is: " + tr.getName());
             // calling GetPerimeter()
-            System.out.println("The perimeter is: " + T.getPerimeter());
+            System.out.println("The perimeter is: " + tr.getPerimeter());
         } catch (Exception e) {
             System.out.println();
             System.out.println("ERROR: Invalid Input");

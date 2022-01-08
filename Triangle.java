@@ -35,6 +35,7 @@ public class Triangle {
 
         final int ninetyDegrees = 90;
         final int oneEighty = 180;
+        final int half = 0.5;
 
         this.sideALen = len1;
         this.sideBLen = len2;
@@ -45,14 +46,15 @@ public class Triangle {
         }
     }
 
-    // defined a protected member function
-    // it checks whether the triangle entered by
-    // user is a valid triangle or not.
+    /**
+    * Gets the Triangle.
+    *
+    * @return returns if its true
+    */
     protected boolean isTriangleValid() {
         double len1 = this.sideALen;
         double len2 = this.sideBLen;
         double len3 = this.sideCLen;
-
         // if sum of any two sides is smaller than the 
         // third side then the triangle is not valid 
         // otherwise it is a valid triangle
@@ -63,9 +65,13 @@ public class Triangle {
         return true;
     }
 
-    // this function returns the semi perimeter of the triangle
+    /**                                                                         
+    * Gets the Perimeter.
+    *
+    * @return returns the Perimeter
+    */
     public double getSemiPerimeter() {
-        return 0.5 * this.getPerimeter();
+        return half * this.getPerimeter();
     }
 
     /**
@@ -149,11 +155,13 @@ public class Triangle {
             name += "Acute ";
         // if one of the angles is 90 degrees, then
         // the triangle is right triangle
-        } else if (a2 == ninetyDegrees || b2 == ninetyDegrees || c2 == ninetyDegrees) {
+        } else if (a2 == ninetyDegrees || b2 == ninetyDegrees
+             || c2 == ninetyDegrees) {
             name += "Right ";
         // if one angle is greater than 90 degrees then
         // the triangle is obtuse triangle
-        } else if (a2 > ninetyDegrees || b2 > ninetyDegrees || c2 > ninetyDegrees) {
+        } else if (a2 > ninetyDegrees || b2 > ninetyDegrees
+             || c2 > ninetyDegrees) {
             name += "Obtuse ";
         }
         // if all the sides of the triangle are equal
