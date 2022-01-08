@@ -1,20 +1,40 @@
+/*
+* This is the class file
+*
+* @author  Ahmad El-khawaldeh
+* @version 1.0
+* @since   2022-1-5
+*/
 
 
-
-
+/**
+* This is the class that contains many functions.
+*/
 public class Triangle {
-    // declared private data member for side lengths
-    // of the triangle
-    private double sideALen;
-    private double sideBLen;
-    private double sideCLen;
+    /**
+    * Length A.
+    */
+    private static  double sideALen;
+    /**
+    * Length B.
+    */
+    private static double sideBLen;
+    /**
+    * Length \C.
+    */
+    private static double sideCLen;
 
-    // defined constructor for the Triangle class
+    /**
+    * This is the constructor.
+    *
+    * @param len1 the inputted length A
+    * @param len2 the inputted length B
+    * @param len3 the inputted length C
+    */
     public Triangle(double len1, double len2, double len3) {
         this.sideALen = len1;
         this.sideBLen = len2;
         this.sideCLen = len3;
-
         // checking if the triangle is a valid triangle or not.
         if (!this.isTriangleValid()) {
             System.out.println("Triangle is not valid");
@@ -29,9 +49,11 @@ public class Triangle {
         double len2 = this.sideBLen;
         double len3 = this.sideCLen;
 
-        // if sum of any two sides is smaller than the third side then the triangle is not valid.
+        // if sum of any two sides is smaller than the 
+        // third side then the triangle is not valid 
         // otherwise it is a valid triangle
-        if (((len1 + len2) <= len3) || ((len2 + len3) <= len1) || ((len3 + len1) <= len2)) {
+        if (((len1 + len2) <= len3) || ((len2 + len3) <= len1)
+             || ((len3 + len1) <= len2)) {
             return false;
         }
         return true;
@@ -42,7 +64,11 @@ public class Triangle {
         return 0.5 * this.getPerimeter();
     }
 
-    // this function returns the area of the triangle
+    /**
+    * Gets the Area.
+    *
+    * @return returns the area
+    */
     public double getArea() {
         double sp = this.getSemiPerimeter();
         double a = this.sideALen;
@@ -53,36 +79,55 @@ public class Triangle {
         return (Math.sqrt(sp * (sp - a) * (sp - b) * (sp - c)));
     }
 
-    // this function computes the angle A of the triangle
+    /**
+    * Gets the Angle A.
+    *
+    * @return returns Angle A
+    */
     public double getAngleA() {
         double a = this.sideALen;
         double b = this.sideBLen;
         double c = this.sideCLen;
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+        return (180.0 / Math.PI) * Math.acos(((b * b) + (c * c)
+             - (a * a)) / (2 * b * c));
     }
 
-    // this function computes the angle B of the triangle
+    /**
+    * Gets the Angle B.
+    *
+    * @return returns Angle B
+    */
     public double getAngleB() {
         double a = this.sideALen;
         double b = this.sideBLen;
         double c = this.sideCLen;
 
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((c * c) + (a * a) - (b * b)) / (2 * c * a));
+        return (180.0 / Math.PI) * Math.acos(((c * c) + (a * a)
+             - (b * b)) / (2 * c * a));
     }
 
-    // this function computes the angle C of the triangle
+    /**
+    * Gets the Angle C.
+    *
+    * @return returns Angle C
+    */
     public double getAngleC() {
         double a = this.sideALen;
         double b = this.sideBLen;
         double c = this.sideCLen;
 
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((a * a) + (b * b) - (c * c)) / (2 * a * b));
+        return (180.0 / Math.PI) * Math.acos(((a * a) + (b * b)
+             - (c * c)) / (2 * a * b));
     }
 
-    // this function returns the name of the triangle
+    /**
+    * Gets the name.
+    *
+    * @return returns the name
+    */
     public String getName() {
         double a = this.sideALen;
         double b = this.sideBLen;
@@ -98,35 +143,26 @@ public class Triangle {
         // the triangle is acute triangle
         if (A < 90 && B < 90 && C < 90) {
             name += "Acute ";
-        }
-
         // if one of the angles is 90 degrees, then
         // the triangle is right triangle
-        else if (A == 90 || B == 90 || C == 90) {
+        } else if (A == 90 || B == 90 || C == 90) {
             name += "Right ";
-        }
-
         // if one angle is greater than 90 degrees then
         // the triangle is obtuse triangle
-        else if (A > 90 || B > 90 || C > 90) {
+        } else if (A > 90 || B > 90 || C > 90) {
             name += "Obtuse ";
         }
-
         // if all the sides of the triangle are equal
         // then the triangle is Equilateral
         if (a == b && b == c) {
             name += "Equilateral";
-        }
-
         // if only two sides of the triangle are
         // equal, then the triangle is Isoceles
-        else if (a == b || b == c || c == a) {
+        } else if (a == b || b == c || c == a) {
             name += "Isoceles";
-        }
-
         // if none of the sides are equal to each other,
         // then the triangle is Scalene
-        else if (a != b && b != c && c != a) {
+        } else if (a != b && b != c && c != a) {
             name += "Scalene";
         }
 
@@ -134,7 +170,11 @@ public class Triangle {
         return name;
     }
 
-    // this function returns the perimeter of the triangle
+    /**
+    * Gets the Perimeter.
+    *
+    * @return returns the Perimeter
+    */
     public double getPerimeter() {
         return this.sideALen + this.sideBLen + this.sideCLen;
     }

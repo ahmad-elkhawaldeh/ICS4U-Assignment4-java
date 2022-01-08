@@ -6,15 +6,33 @@
 * @since   2021-12-28
 */
 
-
 import java.util.Scanner;
 
+/**
+* This program uses a custom class.
+*/
 public class Main {
+    /**
+    * Prevent instantiation
+    * Throw an exception IllegalStateException.
+    * if this ever is called
+    *
+    * @throws IllegalStateException
+    *
+    */
+    private Main() {
+        // Prevent instantiation
+        // Optional: throw an exception e.g. AssertionError
+        // if this ever *is* called
+        throw new IllegalStateException("Cannot be instantiated");
+    }
 
-    // main function
+    /**
+    * This is the main function.
+    *
+    * @param args this will not be used
+    */
     public static void main(String[] args) {
-
-
         try {
             Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
@@ -26,27 +44,20 @@ public class Main {
             System.out.println("\nSide C:");
             double sideC = input.nextDouble();
 
-            // created object of class Triangle and calling different member
-            // functions
             Triangle T = new Triangle(sideA, sideB, sideC);
             // calling GetArea()
             System.out.println("The area is: " + T.getArea());
-
             // calling GetAngleA()
             System.out.println("Angle A is: " + T.getAngleA());
-
             // calling GetAngleB()
             System.out.println("Angle B is: " +  T.getAngleB());
-
             // calling GetAngleC()
             System.out.println("Angle C is: " + T.getAngleC());
-
             // calling GetName()
             System.out.println("The name is: " + T.getName());
-
             // calling GetPerimeter()
             System.out.println("The perimeter is: " + T.getPerimeter());
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println();
             System.out.println("ERROR: Invalid Input");
         }
