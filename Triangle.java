@@ -31,7 +31,11 @@ public class Triangle {
     * @param len2 the inputted length B
     * @param len3 the inputted length C
     */
-    public Triangle(double len1, double len2, double len3) {
+    public Triangle(final double len1, final double len2, final double len3) {
+
+        final int ninetyDegrees = 90;
+        final int oneEighty = 180;
+
         this.sideALen = len1;
         this.sideBLen = len2;
         this.sideCLen = len3;
@@ -89,7 +93,7 @@ public class Triangle {
         double b = this.sideBLen;
         double c = this.sideCLen;
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((b * b) + (c * c)
+        return (oneEighty / Math.PI) * Math.acos(((b * b) + (c * c)
              - (a * a)) / (2 * b * c));
     }
 
@@ -104,7 +108,7 @@ public class Triangle {
         double c = this.sideCLen;
 
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((c * c) + (a * a)
+        return (oneEighty / Math.PI) * Math.acos(((c * c) + (a * a)
              - (b * b)) / (2 * c * a));
     }
 
@@ -119,7 +123,7 @@ public class Triangle {
         double c = this.sideCLen;
 
         // using law of cosines to compute the angle of the triangle
-        return (180.0 / Math.PI) * Math.acos(((a * a) + (b * b)
+        return (oneEighty / Math.PI) * Math.acos(((a * a) + (b * b)
              - (c * c)) / (2 * a * b));
     }
 
@@ -129,40 +133,40 @@ public class Triangle {
     * @return returns the name
     */
     public String getName() {
-        double a = this.sideALen;
-        double b = this.sideBLen;
-        double c = this.sideCLen;
+        double a1 = this.sideALen;
+        double b1 = this.sideBLen;
+        double c1 = this.sideCLen;
 
-        double A = this.getAngleA();
-        double B = this.getAngleB();
-        double C = this.getAngleC();
+        double a2 = this.getAngleA();
+        double b2 = this.getAngleB();
+        double c2 = this.getAngleC();
 
         String name = "";
 
         // if all angles are smaller than 90 degrees then
         // the triangle is acute triangle
-        if (A < 90 && B < 90 && C < 90) {
+        if (a2 < ninetyDegrees && b2 < ninetyDegrees && c2 < ninetyDegrees) {
             name += "Acute ";
         // if one of the angles is 90 degrees, then
         // the triangle is right triangle
-        } else if (A == 90 || B == 90 || C == 90) {
+        } else if (a2 == ninetyDegrees || b2 == ninetyDegrees || c2 == ninetyDegrees) {
             name += "Right ";
         // if one angle is greater than 90 degrees then
         // the triangle is obtuse triangle
-        } else if (A > 90 || B > 90 || C > 90) {
+        } else if (a2 > ninetyDegrees || b2 > ninetyDegrees || c2 > ninetyDegrees) {
             name += "Obtuse ";
         }
         // if all the sides of the triangle are equal
         // then the triangle is Equilateral
-        if (a == b && b == c) {
+        if (a1 == b1 && b1 == c1) {
             name += "Equilateral";
         // if only two sides of the triangle are
         // equal, then the triangle is Isoceles
-        } else if (a == b || b == c || c == a) {
+        } else if (a1 == b1 || b1 == c1 || c1 == a1) {
             name += "Isoceles";
         // if none of the sides are equal to each other,
         // then the triangle is Scalene
-        } else if (a != b && b != c && c != a) {
+        } else if (a1 != b1 && b1 != c1 && c1 != a1) {
             name += "Scalene";
         }
 
