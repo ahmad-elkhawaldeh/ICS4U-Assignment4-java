@@ -55,8 +55,8 @@ public class Triangle {
         double len1 = this.sideALen;
         double len2 = this.sideBLen;
         double len3 = this.sideCLen;
-        // if sum of any two sides is smaller than the 
-        // third side then the triangle is not valid 
+        // if sum of any two sides is smaller than the
+        // third side then the triangle is not valid
         // otherwise it is a valid triangle
         if (((len1 + len2) <= len3) || ((len2 + len3) <= len1)
              || ((len3 + len1) <= len2)) {
@@ -65,7 +65,7 @@ public class Triangle {
         return true;
     }
 
-    /**                                                                         
+    /**
     * Gets the Perimeter.
     *
     * @return returns the Perimeter
