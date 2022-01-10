@@ -30,7 +30,7 @@ final class Triangle {
     * @param len2 the inputted length B
     * @param len3 the inputted length C
     */
-    public Triangle(final double len1, final double len2, final double len3) {
+    final Triangle(final double len1, final double len2, final double len3) {
         final int ninetyDegrees = 90;
         final int oneEighty = 180;
         final int half = 0.5;
