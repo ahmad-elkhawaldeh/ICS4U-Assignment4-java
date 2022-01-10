@@ -11,14 +11,28 @@ import java.util.Scanner;
 /**
 * This program uses a custom class.
 */
-public class Main {
+final class Main {
+     /**
+     * Prevent instantiation
+     * Throw an exception IllegalStateException.
+     * if this ever is called
+     *
+     * @throws IllegalStateException
+     *
+     */
+    private Main() {
+        // Prevent instantiation
+        // Optional: throw an exception e.g. AssertionError
+        // if this ever *is* called
+        throw new IllegalStateException("Cannot be instantiated");
+    }
 
     /**
     * This is the main function.
     *
     * @param args this will not be used
     */
-    public static void main(String[] final args) {
+    public static void main(final String[] args) {
         try {
             final Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
