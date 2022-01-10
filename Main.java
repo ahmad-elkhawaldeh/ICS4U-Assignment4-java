@@ -32,32 +32,32 @@ final class Main {
     *
     * @param args this will not be used
     */
-    public static void main(String[] final args) {
+    public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(System.in);
+            final Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
             // sideB and sideC
             System.out.println("Side A:");
-            double sideA = input.nextDouble();
+            final double sideA = input.nextDouble();
             System.out.println("\nSide B:");
-            double sideB = input.nextDouble();
+            final double sideB = input.nextDouble();
             System.out.println("\nSide C:");
-            double sideC = input.nextDouble();
+            final double sideC = input.nextDouble();
 
-            Triangle tr = new Triangle(sideA, sideB, sideC);
+            final Triangle tR = new Triangle(sideA, sideB, sideC);
             // calling GetArea()
-            System.out.println("The area is: " + tr.getArea());
+            System.out.println("The area is: " + tR.getArea());
             // calling GetAngleA()
-            System.out.println("Angle A is: " + tr.getAngleA());
+            System.out.println("Angle A is: " + tR.getAngleA());
             // calling GetAngleB()
-            System.out.println("Angle B is: " +  tr.getAngleB());
+            System.out.println("Angle B is: " + tR.getAngleB());
             // calling GetAngleC()
-            System.out.println("Angle C is: " + tr.getAngleC());
+            System.out.println("Angle C is: " + tR.getAngleC());
             // calling GetName()
-            System.out.println("The name is: " + tr.getName());
+            System.out.println("The name is: " + tR.getName());
             // calling GetPerimeter()
-            System.out.println("The perimeter is: " + tr.getPerimeter());
-        } catch (Exception e) {
+            System.out.println("The perimeter is: " + tR.getPerimeter());
+        } catch (Exception IllegalStateException) {
             System.out.println();
             System.out.println("ERROR: Invalid Input");
         }
