@@ -11,22 +11,7 @@ import java.util.Scanner;
 /**
 * This program uses a custom class.
 */
-final class Main {
-    /**
-    * Prevent instantiation
-    * Throw an exception IllegalStateException.
-    * if this ever is called
-    *
-    * @throws IllegalStateException
-    *
-    */
-    private Main() {
-        // Prevent instantiation
-        // Optional: throw an exception e.g. AssertionError
-        // if this ever *is* called
-        throw new IllegalStateException("Cannot be instantiated");
-    }
-
+public class Main {
     /**
     * This is the main function.
     *
