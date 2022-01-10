@@ -11,14 +11,14 @@ import java.util.Scanner;
 /**
 * This program uses a custom class.
 */
-final class Main {
+public class Main {
 
     /**
     * This is the main function.
     *
     * @param args this will not be used
     */
-    public static void main(String[] args) {
+    public static void main(String[] final args) {
         try {
             final Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
