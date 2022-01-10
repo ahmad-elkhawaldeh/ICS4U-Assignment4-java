@@ -11,7 +11,8 @@ import java.util.Scanner;
 /**
 * This program uses a custom class.
 */
-public class Main {
+final class Main {
+
     /**
     * This is the main function.
     *
