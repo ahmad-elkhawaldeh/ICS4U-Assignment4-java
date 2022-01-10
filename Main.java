@@ -32,7 +32,7 @@ final class Main {
     *
     * @param args this will not be used
     */
-    public static void main(String[] final args) {
+    public static void main(String[] args) {
         try {
             Scanner input = new Scanner(System.in);
             // asking user to input values for sideA,
